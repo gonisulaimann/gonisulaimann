@@ -33,16 +33,16 @@ Beyond coding, you'll find me enjoying Watching, Reading, and Travelling. Let's 
 ### Connect with me:
 
 [![website](./img/globe-light.svg)](https://amgoni.me#gh-light-mode-only)
-[![website](./img/globe-dark.svg)](https://amgoni.me#gh-dark-mode-only)
+[![website](./img/globe-dark.svg)](https://amgoni#gh-dark-mode-only)
 &nbsp;&nbsp;
-[![website](./img/twitter-light.svg)](https://twitter.com/brogonie#gh-light-mode-only)
-[![website](./img/twitter-dark.svg)](https://twitter.com/brogonie#gh-dark-mode-only)
+[![website](./img/twitter-light.svg)](https://twitter.com/gonisulaimann#gh-light-mode-only)
+[![website](./img/twitter-dark.svg)](https://twitter.com/gonisulaimann#gh-dark-mode-only)
 &nbsp;&nbsp;
-[![website](./img/linkedin-light.svg)](https://linkedin.com/in/algoni#gh-light-mode-only)
-[![website](./img/linkedin-dark.svg)](https://linkedin.com/in/algoni#gh-dark-mode-only)
+[![website](./img/linkedin-light.svg)](https://ng.linkedin.com/in/gonisulaiman#gh-light-mode-only)
+[![website](./img/linkedin-dark.svg)](https://ng.linkedin.com/in/gonisulaiman#gh-dark-mode-only)
 &nbsp;&nbsp;
-[![website](./img/instagram-light.svg)](https://instagram.com/brogonie#gh-light-mode-only)
-[![website](./img/instagram-dark.svg)](https://instagram.com/brogonie#gh-dark-mode-only)
+[![website](./img/instagram-light.svg)](https://instagram.com/gonisulaimann#gh-light-mode-only)
+[![website](./img/instagram-dark.svg)](https://instagram.com/gonisulaimann#gh-dark-mode-only)
 
 
 Let's collaborate and create something remarkable together!
