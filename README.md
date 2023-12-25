@@ -56,10 +56,6 @@ Let's collaborate and create something remarkable together!
   <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
 </div>
 
-### Most used Languages
-
-![My Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Azrielx86&theme=gotham&layout=compact&hide=HTML,CSS,SCSS,VHDL,Assembly&exclude_repo=ProyectoFinalPOO,PracticasComputoGrafico_2024-1)
-
 #
 
 <details>
