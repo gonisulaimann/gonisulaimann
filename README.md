@@ -49,7 +49,7 @@ Let's collaborate and create something remarkable together!
 
 ### Technologies I use
 
-[![My Skills](https://skillicons.dev/icons?i=cs,dotnet,cpp,python,angular,ts,js,linux&theme=dark)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=NodeJS-Dark,dotnet,cpp,python,angular,ts,js,linux&theme=dark)](https://skillicons.dev)
 
 <div>
   <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"/>
