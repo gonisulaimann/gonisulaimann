@@ -1,7 +1,7 @@
-# 🤖 Goni
+# Hello 👋 My Name is Goni!
 **`Digital Craftsman (Developer/Student/Learner)`**
 
-Hey there! I'm Goni, a passionate student and developer exploring the fascinating world of technology. Currently studying Computer Science, I'm captivated by the endless possibilities it offers. As a devoted developer, I specialize in embracing new technologies and transforming innovative ideas into reality through code.
+I a passionate student and developer exploring the fascinating world of technology. Currently studying Computer Science, I'm captivated by the endless possibilities it offers. As a devoted developer, I specialize in embracing new technologies and transforming innovative ideas into reality through code.
 
 My journey as a student fuels my curiosity, and my role as a developer empowers me to craft meaningful solutions. Whether I'm working on Personal Projects or collaborating with fellow developers, I'm always eager to learn and progress.
 
