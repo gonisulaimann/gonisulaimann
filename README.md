@@ -60,13 +60,17 @@ Let's collaborate and create something remarkable together!
 
 ![My Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Azrielx86&theme=gotham&layout=compact&hide=HTML,CSS,SCSS,VHDL,Assembly&exclude_repo=ProyectoFinalPOO,PracticasComputoGrafico_2024-1)
 
-### 📊 Stats
-
-![Goni's GitHub stats](https://github-readme-stats.vercel.app/api?username=algonisulaiman&show_icons=true&theme=vue-dark)
-![TRZMIEL's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=algonisulaiman&layout=compact&theme=vue-dark)
-
 #
 
 <details>
  <summary><h3>👨‍💻 Goni's Coding Journey</h3></summary>
    I started my coding journey as a naive computer science student with a passion to learn everything I could about this programming world - code, unix, linux, theory. Embarking on a coding journey has been an exhilarating odyssey for me. From the moment I typed my first line of code, I was captivated by the art of crafting digital worlds and bringing ideas to life. What began as a curious exploration quickly evolved into a passionate pursuit. With each challenge I tackled, whether it was deciphering complex algorithms or building interactive websites, I discovered the power of persistence and problem-solving. As I delved into various programming languages and technologies, I found myself continuously pushing boundaries and embracing the thrill of innovation. Through every project I've undertaken, I've not only honed my technical skills but also cultivated a deep appreciation for collaboration and the boundless possibilities that coding unlocks. My coding journey is a testament to the remarkable fusion of creativity, logic, and endless discovery that the world of programming offers, and I'm excited to see where this ever-evolving path takes me next.
+
+  <details>
+    ### 📊 Stats
+
+![Goni's GitHub stats](https://github-readme-stats.vercel.app/api?username=algonisulaiman&show_icons=true&theme=vue-dark)
+![TRZMIEL's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=algonisulaiman&layout=compact&theme=vue-dark)
+
+#
+  </details>
