@@ -65,8 +65,8 @@ Let's collaborate and create something remarkable together!
  <details>
     ### 📊 Stats
 
-![Goni's GitHub stats](https://github-readme-stats.vercel.app/api?username=algonisulaiman&show_icons=true&theme=vue-dark)
-![TRZMIEL's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=algonisulaiman&layout=compact&theme=vue-dark)
+![Goni's GitHub stats](https://github-readme-stats.vercel.app/api?username=gonisulaimann&show_icons=true&theme=vue-dark)
+![TRZMIEL's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gonisulaimann&layout=compact&theme=vue-dark)
 
 #
   </details>
