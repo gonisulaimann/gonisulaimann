@@ -48,6 +48,19 @@ Beyond coding, you'll find me enjoying Watching, Reading, and Travelling. Let's 
 
 Let's collaborate and create something remarkable together!
 
+### Technologies I use
+
+[![My Skills](https://skillicons.dev/icons?i=cs,dotnet,cpp,python,angular,ts,js,linux&theme=dark)](https://skillicons.dev)
+
+<div>
+  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
+</div>
+
+### Most used Languages
+
+![My Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Azrielx86&theme=gotham&layout=compact&hide=HTML,CSS,SCSS,VHDL,Assembly&exclude_repo=ProyectoFinalPOO,PracticasComputoGrafico_2024-1)
+
 ### 📊 Stats
 
 ![Goni's GitHub stats](https://github-readme-stats.vercel.app/api?username=algonisulaiman&show_icons=true&theme=vue-dark)
