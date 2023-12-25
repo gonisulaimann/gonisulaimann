@@ -41,8 +41,8 @@ Beyond coding, you'll find me enjoying Watching, Reading, and Travelling. Let's 
 [![website](./img/linkedin-light.svg)](https://ng.linkedin.com/in/gonisulaiman#gh-light-mode-only)
 [![website](./img/linkedin-dark.svg)](https://ng.linkedin.com/in/gonisulaiman#gh-dark-mode-only)
 &nbsp;&nbsp;
-[![website](./codeSTACKr/img/instagram-light.svg)](https://instagram.com/gonisulaimann#gh-light-mode-only)
-[![website](./codeSTACKr/img/instagram-dark.svg)](https://instagram.com/gonisulaimann#gh-dark-mode-only)
+[![website](./img/instagram-light.svg)](https://instagram.com/gonisulaimann#gh-light-mode-only)
+[![website](./img/instagram-dark.svg)](https://instagram.com/gonisulaimann#gh-dark-mode-only)
 
 
 Let's collaborate and create something remarkable together!
