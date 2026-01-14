@@ -1,7 +1,7 @@
 # 👋 Hi there, I'm Goni Sulaiman.
 
 <p align="center">
-  <img src="1753411933738.jpeg" width="250" alt="Avatar">
+  <img src="1700088390062.jpeg" width="" alt="Avatar">
 </p>
 
 <h3 align="center">Building with AI, people & purpose.</h3>
