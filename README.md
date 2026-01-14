@@ -26,6 +26,6 @@ profile = {
   availableForHire: true
 }
 ```
-<img src="https://media.giphy.com/media/RhwkGhrlj3NVSOxWSN/giphy.gif" height="30"> <em><b>I'm mostly active around the internet</b> so if you want to say hi or just dropby, feel free to <a target="_blank" href="https://github.com/aaveshdev/aaveshdev/issues/new/choose"><strong> create an issue</strong></a>, I'll be happy to exchange our views on dinosaurs or life or anything you fancy about ;)</b> </em>
+<img src="https://media.giphy.com/media/RhwkGhrlj3NVSOxWSN/giphy.gif" height="30"> <em><b>I'm mostly active around the internet</b> so if you want to say hi or just dropby, feel free to <a target="_blank" href="https://github.com/gonisulaimann/gonisulaimann/issues/new/choose"><strong> create an issue</strong></a>, I'll be happy to exchange our views on dinosaurs or life or anything you fancy about ;)</b> </em>
 
 ![](https://visitor-badge.glitch.me/badge?page_id=gonisulaimann)
