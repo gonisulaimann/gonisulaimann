@@ -14,7 +14,7 @@
 
 ---
 
-### 📄 aboutMe.dgn
+### <img src="https://dragon-lang.org/assets/img/logo.png" height="40"> **aboutMe.dgn**
 
 ```javascript
 profile = {
