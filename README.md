@@ -25,6 +25,7 @@ profile = {
   toolsUsing: ["AWS", "Wordpress", "Bootstrap", "Firebase", "Xampp", "Netbeans", "IntelliJIdea", "Android Studio"],
   availableForHire: true
 }
+```
+<img src="https://media.giphy.com/media/RhwkGhrlj3NVSOxWSN/giphy.gif" height="30"> <em><b>I'm mostly active around the internet</b> so if you want to say hi or just dropby, feel free to <a target="_blank" href="https://github.com/aaveshdev/aaveshdev/issues/new/choose"><strong> create an issue</strong></a>, I'll be happy to exchange our views on dinosaurs or life or anything you fancy about ;)</b> </em>
 
-📊 My GitHub Stats
-<p align="left"> <img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DYOUR_GITHUB_USERNAME%26show_icons%3Dtrue%26theme%3Ddark%26hide_border%3Dtrue" alt="Github Stats" /> </p>
+![](https://visitor-badge.glitch.me/badge?page_id=gonisulaimann)
