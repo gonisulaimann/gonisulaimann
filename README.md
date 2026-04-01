@@ -1,9 +1,5 @@
 # 👋 Hi there, I'm Goni Sulaiman.
 
-<p align="center">
-  <img src="github-6980894_1280.png" width="250" alt="Avatar">
-</p>
-
 <h3 align="center">Building with AI, people & purpose.</h3>
 
 <p align="center">
