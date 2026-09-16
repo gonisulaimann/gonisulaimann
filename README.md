@@ -18,6 +18,13 @@ Machine Learning Engineer building local-first tools and institutional platforms
 
 <sub>the rest got deleted</sub>
 
+<!-- Living strip: regenerated daily by .github/workflows/pulse.yml -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/pulse.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/pulse-light.svg" />
+  <img src="./assets/pulse.svg" width="100%" alt="Contribution pulse, last 30 days" />
+</picture>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gonisulaimann/gonisulaimann/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gonisulaimann/gonisulaimann/output/github-snake.svg" />
