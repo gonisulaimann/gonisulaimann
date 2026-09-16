@@ -1,16 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="Goni Sulaiman banner">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="Goni Sulaiman — Machine Learning Engineer, C++ / Python / JS">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#1e3a8a"/>
-    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#30363d" opacity="0.6"/>
+    </pattern>
   </defs>
-  <rect width="1200" height="260" fill="url(#bg)"/>
-  <rect x="64" y="48" width="6" height="164" fill="#58a6ff"/>
-  <text x="96" y="90" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="25" fill="#58a6ff">$ goni --whoami</text>
-  <text x="94" y="160" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="62" font-weight="700" letter-spacing="2" fill="#ffffff">GONI SULAIMAN</text>
-  <text x="96" y="200" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="23" fill="#93c5fd">Machine Learning Engineer &#183; C++ / Python / JS</text>
-  <rect x="1040" y="176" width="13" height="28" fill="#58a6ff">
+  <rect width="1200" height="260" fill="#0d1117"/>
+  <rect width="1200" height="260" fill="url(#dots)"/>
+  <rect x="0.5" y="0.5" width="1199" height="259" fill="none" stroke="#30363d"/>
+  <circle cx="72" cy="54" r="6" fill="#3fb950"/>
+  <text x="92" y="62" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="23" fill="#8b949e">$ goni --whoami</text>
+  <text x="70" y="152" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="66" font-weight="700" letter-spacing="1" fill="#f0f6fc">GONI SULAIMAN</text>
+  <text x="72" y="198" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace" font-size="23" fill="#8b949e">Machine Learning Engineer <tspan fill="#3fb950">·</tspan> C++ / Python / JS</text>
+  <g fill="#3fb950">
+    <rect x="1002" y="168" width="14" height="36" opacity="0.25"/>
+    <rect x="1024" y="146" width="14" height="58" opacity="0.45"/>
+    <rect x="1046" y="118" width="14" height="86" opacity="0.7"/>
+    <rect x="1068" y="140" width="14" height="64" opacity="0.9"/>
+    <rect x="1090" y="160" width="14" height="44" opacity="0.5"/>
+  </g>
+  <rect x="1124" y="176" width="12" height="28" fill="#3fb950">
     <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
   </rect>
 </svg>
