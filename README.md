@@ -1,61 +1,112 @@
-# Goni Sulaiman
-
-> I build systems that keep your data where it belongs — on your device.
-
-No accounts. No uploads. No leaks. Just software that does the job and gets out of the way.
-
----
-
-### Work
-
-| | What | Stack |
-|---|---|---|
-| **[Filecraft](https://github.com/Filecraft/Filecraft)** | Local-first file tools. Prepare a PDF, resize an image, convert a document — work on a copy, keep the original. Ships on Windows, macOS, Linux, browser. | Python · Swift · Web · Extensions |
-| **[filecraft.github.io](https://filecraft.github.io/)** | Product site, docs, download & release infrastructure. EN / FR / ES. | Static · Docs-as-code |
-| **[ceii-platform](https://github.com/Centre-For-Energy/ceii-platform)** | Institutional platform for the Centre for Energy Investment and Innovation, Abuja. Modular monolith with hard boundaries: presentation never touches data directly. | React / Vite / Tailwind · FastAPI · PostgreSQL · Strapi · Docker |
-
-<details>
-<summary><b>How I work — architecture in 30 seconds</b></summary>
-<br>
+<div align="center">
 
 ```
-Users
-  │
-  ▼
-Presentation (React / static) ── REST ──► Application (FastAPI / local engine)
-                                              ├──► Owned data (PostgreSQL / local files)
-                                              └──► Editorial (Strapi / docs)
+   ____  ___  _   ____ _____
+  / __ `/ _ \| | / / __/ __/
+ / /_/ /  __/ |/ / /_/ /_
+ \__, /\___/|___/\__/\__/
+/____/
 ```
 
-- One source of truth per domain. Nothing duplicated, nothing fabricated.
-- Frontend never becomes the business-logic layer.
-- Public content comes from verified sources only.
+### GONI SULAIMAN
 
-</details>
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=620&lines=C%2B%2B+%7C+Python+%7C+JavaScript+%7C+HTML;turns+ideas+into+running+code;systems%2C+tools%2C+experiments)](https://git.io/typing-svg)
 
----
+<img src="https://komarev.com/ghpvc/?username=gonisulaimann&style=flat-square&color=58a6ff" alt="profile views" />
+<img src="https://img.shields.io/github/followers/gonisulaimann?style=flat-square&color=58a6ff&label=followers" alt="followers" />
+<a href="https://linkedin.com/in/gonisulaimann"><img src="https://img.shields.io/badge/linkedin-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="linkedin" /></a>
+<a href="https://x.com/gonisulaimann"><img src="https://img.shields.io/badge/x-000000?style=flat-square&logo=x&logoColor=white" alt="x" /></a>
 
-### Principles
-
-1. **Local first.** If it can run on your machine, it should.
-2. **Small surface, hard edges.** Fewer features, clean boundaries, no magic.
-3. **No slop.** Every file earns its place or gets deleted.
+</div>
 
 ---
 
-### Now
+<table>
+<tr>
+<td valign="top" width="50%">
 
-- Shipping Filecraft `0.10` beta across desktop + browser + extension
-- Building CEII platform foundation — probes, migrations, CI, app shell
-- Mirroring [OmniRoute](https://github.com/gonisulaimann/OmniRoute) for local AI-gateway experiments
+### $ stack
+
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" />
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+
+</td>
+<td valign="top" width="50%">
+
+### $ console
+
+```bash
+$ goni --whoami
+> dev. polyglot. builder.
+
+$ goni --compile main.cpp
+> g++ -O2 -std=c++20 -o ship_it
+
+$ goni --run experiment.py
+> idea → prototype → production
+
+$ goni --serve app.js
+> listening on :curiosity
+```
+
+Filecraft is *one recent build* —
+not the whole story.
+
+</td>
+</tr>
+</table>
 
 ---
 
-### Contact
+<div align="center">
 
-`linkedin` — [gonisulaimann](https://linkedin.com/in/gonisulaimann) · `x` — [@gonisulaimann](https://x.com/gonisulaimann) · `web` — [filecraft.github.io](https://filecraft.github.io/)
+### $ selected_builds
 
-Open an issue on any repo. I read everything.
+<a href="https://github.com/Filecraft/Filecraft"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Filecraft&repo=Filecraft&theme=tokyonight&hide_border=true" /></a>
+<a href="https://github.com/Centre-For-Energy/ceii-platform"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Centre-For-Energy&repo=ceii-platform&theme=tokyonight&hide_border=true" /></a>
+<a href="https://github.com/gonisulaimann/OmniRoute"><img src="https://github-readme-stats.vercel.app/api/pin/?username=gonisulaimann&repo=OmniRoute&theme=tokyonight&hide_border=true" /></a>
+
+<sub>one personal tool · one institutional platform · one AI-gateway mirror — the rest got deleted</sub>
+
+</div>
 
 ---
-<sub>Filecraft · Centre for Energy Investment and Innovation · Abuja / Remote</sub>
+
+<div align="center">
+
+### $ activity
+
+<img src="https://github-readme-stats.vercel.app/api?username=gonisulaimann&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="160" />
+<img src="https://streak-stats.demolab.com?user=gonisulaimann&theme=tokyonight&hide_border=true" height="160" />
+
+<br />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gonisulaimann&layout=compact&theme=tokyonight&hide_border=true" height="150" />
+
+<br />
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=gonisulaimann&theme=tokyo-night&hide_border=true" width="100%" />
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/gonisulaimann/gonisulaimann/output/snake.svg" alt="snake" />
+
+```
+$ open_issue --to goni
+> I read everything. Talk code, systems, or weird experiments.
+```
+
+</div>
