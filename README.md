@@ -1,8 +1,14 @@
 <div align="center">
 
-<img src="./assets/banner.svg" width="100%" alt="Goni Sulaiman — Machine Learning Engineer, C++ / Python / JS" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg" />
+  <img src="./assets/banner.svg" width="100%" alt="Goni Sulaiman — Machine Learning Engineer, C++ / Python / JS" />
+</picture>
 
 Machine Learning Engineer building local-first tools and institutional platforms — mostly C++, Python and JavaScript.
+
+<br />
 
 **[Filecraft](https://github.com/Filecraft/Filecraft)** — local-first file tools. Your original, untouched.
 <br />
