@@ -60,6 +60,7 @@ I actively contribute to high-traffic open-source infrastructure projects. In [O
 - **Streaming & Protocol Correctness**: Eliminated upstream HTTP 400 Bad Request errors on strict providers (NVIDIA NIM, Groq) caused by internal routing marker leakage ([#12735](https://github.com/diegosouzapw/OmniRoute/pull/12735)).
 - **Real-Time Transports**: Implemented bi-directional WebSocket transport dispatch and turn parameter normalization for the Codex App-Server provider ([#14281](https://github.com/diegosouzapw/OmniRoute/pull/14281)).
 - **Database & Migration Resilience**: Silenced false-positive boot crashes during legacy Bifrost slot index renumbering ([#14274](https://github.com/diegosouzapw/OmniRoute/pull/14274)).
+- **Storage & Retention Engineering**: Added retention pruning and period reset sweeps for unpruned `compression_engine_breakdown` telemetry tables ([#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)).
 - **Test Harness Engineering**: Authored synthetic event delivery verification for native macOS GUI test harnesses in [Filecraft](https://github.com/Filecraft/Filecraft) ([#7](https://github.com/Filecraft/Filecraft/pull/7)).
 
 👉 **See the complete [Open Source Contribution Index & Technical Deep Dives](./OPEN_SOURCE.md)** for detailed problem diagnoses, execution traces, and maintainer reviews.
