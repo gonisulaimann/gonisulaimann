@@ -51,11 +51,3 @@ Systems and developer tooling engineer building native macOS software, static an
 I maintain in public, publish the reasoning behind technical decisions, answer questions, and work with contributors to turn real-world feedback into documented, tested improvements. 
 
 👉 **See my complete [Maintenance Log](./MAINTENANCE_LOG.md)**.
-
-## Connect
-
-- **LinkedIn**: [linkedin.com/in/gonisulaimann](https://linkedin.com/in/gonisulaimann)
-- **Discord**: `gonisulaiman`
-- **Microsoft Learn**: [Student Ambassador Profile](https://mvp.microsoft.com/en-US/studentambassadors/profile/326762de-6f72-441f-baa8-ef5a9efc5d1c)
-- **Ko-fi**: [ko-fi.com/gonisulaiman](https://ko-fi.com/gonisulaiman)
-- **GitHub**: [@gonisulaimann](https://github.com/gonisulaimann)
