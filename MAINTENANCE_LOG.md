@@ -64,6 +64,7 @@ Recent direct commits and contributions across canonical repositories.
 
 | Repository | Commit | Message | Date |
 | :--- | :---: | :--- | :---: |
+| **[gonisulaimann/gonisulaimann](https://github.com/gonisulaimann/gonisulaimann)** | [`6da147d`](https://github.com/gonisulaimann/gonisulaimann/commit/6da147d947fe46dd786ff391ba35013f1d7335e4) | Revise README to focus on community and maintenance log | `2026-09-20` |
 | **[gonisulaimann/gonisulaimann](https://github.com/gonisulaimann/gonisulaimann)** | [`2799ac8`](https://github.com/gonisulaimann/gonisulaimann/commit/2799ac8a1101fc1ed05c9d451d638ee937927331) | docs: update maintenance log link text | `2026-09-20` |
 | **[gonisulaimann/gonisulaimann](https://github.com/gonisulaimann/gonisulaimann)** | [`a9b8e7d`](https://github.com/gonisulaimann/gonisulaimann/commit/a9b8e7d432a1e6f57c13c22cd1c5f539a368e2aa) | docs: rewrite maintenance log in first-person with engineering diagrams | `2026-09-20` |
 | **[gonisulaimann/gonisulaimann](https://github.com/gonisulaimann/gonisulaimann)** | [`002ef05`](https://github.com/gonisulaimann/gonisulaimann/commit/002ef0581c36a91f0f59852763c22a8bf482bf6b) | Add link to Open Source Contribution Index | `2026-09-20` |
@@ -88,4 +89,3 @@ Recent direct commits and contributions across canonical repositories.
 | **[gonisulaimann/Grounded](https://github.com/gonisulaimann/Grounded)** | [`77026e9`](https://github.com/gonisulaimann/Grounded/commit/77026e9db73a948d22779921b8305ffd25f570f0) | Adoption bundle: inline suppressions, pre-commit hook, action, problem matchers | `2026-09-17` |
 | **[gonisulaimann/Grounded](https://github.com/gonisulaimann/Grounded)** | [`29367ec`](https://github.com/gonisulaimann/Grounded/commit/29367ec5c0f138455e5118500b509a11879e1445) | Untrack local session notes (keep .gitignore current) | `2026-09-17` |
 | **[gonisulaimann/Grounded](https://github.com/gonisulaimann/Grounded)** | [`b8422c0`](https://github.com/gonisulaimann/Grounded/commit/b8422c0162048352a7ca7198a377d45482c41a5f) | v0.3.0: baseline files and changed-line gating for legacy adoption | `2026-09-17` |
-| **[gonisulaimann/Grounded](https://github.com/gonisulaimann/Grounded)** | [`5fa54c9`](https://github.com/gonisulaimann/Grounded/commit/5fa54c9522bdfceda14218d8a96bc3462a59e62f) | Untrack session notes, bytecode, and add .gitignore | `2026-09-17` |
