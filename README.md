@@ -32,7 +32,7 @@ Systems and developer tooling engineer building native macOS software, static an
       <a href="https://github.com/diegosouzapw/OmniRoute"><img height="18" src="https://img.shields.io/badge/-Contributor-2ea44f?style=flat-square" alt="Contributor"/></a><br/>
       <sub>Active upstream contributor to OmniRoute, an open-source AI gateway routing across 350+ providers. Diagnosed and fixed critical URL rewrite authorization bypasses, upstream SSE payload leaks, and WebSocket transports.</sub><br/>
       <img height="18" src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square" alt="TypeScript"/>
-      <a href="./OPEN_SOURCE.md"><img height="18" src="https://img.shields.io/badge/Contributions-Index-blue?style=flat-square" alt="Index"/></a>
+      <a href="./MAINTENANCE_LOG.md"><img height="18" src="https://img.shields.io/badge/Maintenance%20Log-Live-blue?style=flat-square" alt="Log"/></a>
     </td>
     <td width="50%" valign="top">
       <b><a href="https://github.com/Centre-For-Energy/ceii-platform">CEII Platform</a></b>
@@ -63,7 +63,7 @@ I actively contribute to high-traffic open-source infrastructure projects. In [O
 - **Storage & Retention Engineering**: Added retention pruning and period reset sweeps for unpruned `compression_engine_breakdown` telemetry tables ([#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)).
 - **Test Harness Engineering**: Authored synthetic event delivery verification for native macOS GUI test harnesses in [Filecraft](https://github.com/Filecraft/Filecraft) ([#7](https://github.com/Filecraft/Filecraft/pull/7)).
 
-👉 **See my complete [Upstream Maintenance Log & Engineering Notes](./OPEN_SOURCE.md)** for detailed problem diagnoses, execution traces, and PR breakdowns.
+👉 **See my complete [Upstream Maintenance Log & Live Engineering Changelog](./MAINTENANCE_LOG.md)** for real-time PR tracking, live commit streams, and architecture breakdowns.
 
 ## Connect
 
