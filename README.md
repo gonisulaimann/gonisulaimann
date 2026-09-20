@@ -44,26 +44,10 @@ Systems and developer tooling engineer building native macOS software, static an
   </tr>
 </table>
 
-## What I build
+## Community
 
-I focus on systems where correctness, low latency, and runtime reliability matter:
-
-- **Static Analysis & Tooling**: Writing zero-dependency lexical scanners and AST-based parsers that run fast enough for pre-commit hooks and local CI.
-- **Native Systems & Desktop UX**: Building native macOS applications with Swift, AppKit, and SwiftUI that integrate deeply with Apple hardware APIs and local networking.
-- **AI Gateway Infrastructure**: Developing proxy pipelines, real-time streaming engines (SSE, WebSockets), failover circuit breakers, and security enforcement mechanisms for LLM traffic.
-
-## Open-Source Contributions
-
-I actively contribute to high-traffic open-source infrastructure projects. In [OmniRoute](https://github.com/diegosouzapw/OmniRoute) (68k+ stars, 350+ providers), my work covers:
-
-- **Security & Authorization**: Fixed a critical access-control bypass on URL rewrite aliases where non-canonical paths escaped category checks ([#13741](https://github.com/diegosouzapw/OmniRoute/pull/13741)).
-- **Streaming & Protocol Correctness**: Eliminated upstream HTTP 400 Bad Request errors on strict providers (NVIDIA NIM, Groq) caused by internal routing marker leakage ([#12735](https://github.com/diegosouzapw/OmniRoute/pull/12735)).
-- **Real-Time Transports**: Implemented bi-directional WebSocket transport dispatch and turn parameter normalization for the Codex App-Server provider ([#14281](https://github.com/diegosouzapw/OmniRoute/pull/14281)).
-- **Database & Migration Resilience**: Silenced false-positive boot crashes during legacy Bifrost slot index renumbering ([#14274](https://github.com/diegosouzapw/OmniRoute/pull/14274)).
-- **Storage & Retention Engineering**: Added retention pruning and period reset sweeps for unpruned `compression_engine_breakdown` telemetry tables ([#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)).
-- **Test Harness Engineering**: Authored synthetic event delivery verification for native macOS GUI test harnesses in [Filecraft](https://github.com/Filecraft/Filecraft) ([#7](https://github.com/Filecraft/Filecraft/pull/7)).
-
-👉 **See the complete [Open Source Contribution Index & Technical Deep Dives](./OPEN_SOURCE.md)** for detailed problem diagnoses, execution traces, and maintainer reviews.
+I maintain in public, publish the reasoning behind technical decisions, answer questions, and work with contributors to turn real-world feedback into documented, tested improvements
+👉 **See the complete [Open Source Contribution Index & Technical Deep Dives](./OPEN_SOURCE.md)** for detailed maintainance log.
 
 ## Connect
 
