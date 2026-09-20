@@ -2,8 +2,7 @@
 
 Systems and developer tooling engineer building native macOS software, static analysis engines, and high-throughput AI infrastructure. Core contributor to production routing and streaming runtimes.
 
-<a href="https://github.com/gonisulaimann/Grounded"><img height="20" src="https://img.shields.io/badge/Grounded-v0.5.0-blue?style=flat-square&logo=python" alt="Grounded"/></a>
-<a href="https://github.com/gonisulaimann/Notcher"><img height="20" src="https://img.shields.io/badge/Notcher-macOS%2014+-orange?style=flat-square&logo=swift" alt="Notcher"/></a>
+ <a href="https://www.ko-fi.com/gonisulaiman"><img src="https://srv-cdn.himpfen.io/badges/kofi/kofi-flat.svg" alt="Ko-Fi" /></a>
 <a href="https://github.com/diegosouzapw/OmniRoute"><img height="20" src="https://img.shields.io/badge/OmniRoute-Core%20Contributor-2ea44f?style=flat-square&logo=github" alt="OmniRoute"/></a>
 <a href="https://linkedin.com/in/gonisulaimann"><img height="20" src="https://img.shields.io/badge/LinkedIn-gonisulaimann-0077B5?style=flat-square&logo=linkedin" alt="LinkedIn"/></a>
 
