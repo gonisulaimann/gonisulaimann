@@ -17,6 +17,7 @@ This document indexes selected upstream contributions by **Goni Sulaiman** acros
 | **[#12371](https://github.com/diegosouzapw/OmniRoute/pull/12371)** | Model Registry | **Publish effort tiers on Kimi K3 base models only.** Restricted reasoning configuration parameters to supported model architectures. | **Merged** |
 | **[#12369](https://github.com/diegosouzapw/OmniRoute/pull/12369)** | Localization | **Wrap placeholder variables in ICU single quotes across all 43 locales.** Resolved ICU message syntax parsing breaks during onboarding. | **Merged** |
 | **[#12368](https://github.com/diegosouzapw/OmniRoute/pull/12368)** | CLI Runtime | **Remove duplicate positional argument in tunnel create command.** | **Merged** |
+| **[#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)** | Storage & Retention | **Prune `compression_engine_breakdown` on retention schedule and usage resets ([#14268](https://github.com/diegosouzapw/OmniRoute/issues/14268)).** Wired orphaned telemetry table into `cleanupCompressionEngineBreakdown` with 30-day cutoff and included in `RESET_TARGETS`. | **Active** |
 | **[#14281](https://github.com/diegosouzapw/OmniRoute/pull/14281)** | Protocols & Transports | **Wire Codex App-Server WebSocket transport and normalize reasoning model aliases ([#14277](https://github.com/diegosouzapw/OmniRoute/issues/14277)).** Implemented bi-directional WebSocket client dispatch and normalized suffix aliases (`-low`, `-medium`, `-high`) to turn effort parameters. | **Active** |
 | **[#14275](https://github.com/diegosouzapw/OmniRoute/pull/14275)** | LiveWS Real-Time | **Allow anonymous dashboard WebSocket connections when `requireLogin=false` ([#14256](https://github.com/diegosouzapw/OmniRoute/issues/14256)).** Fixed local monitoring disconnections when operator authentication is disabled. | **Active** |
 | **[#14274](https://github.com/diegosouzapw/OmniRoute/pull/14274)** | Storage Engine | **Silence critical boot warnings for legacy Bifrost slot index renumbering ([#14262](https://github.com/diegosouzapw/OmniRoute/issues/14262)).** Traced migration history (slots 100–105) to eliminate false-alarm fatal alerts during boot sequence. | **Active** |
@@ -104,6 +105,22 @@ The automated macOS GUI test harness exhibited non-deterministic test failures f
 
 #### Solution
 Engineered an active synthetic delivery probe: before trusting synthetic input capability, the test harness emits an innocuous virtual `F13` keypress and verifies delivery acknowledgment within the event loop. If event injection is unsupported by the host environment, the harness smoothly switches to `--human-driven` mode, allowing operators to drive inputs while the harness independently asserts pixel output, byte integrity, and application relaunch guarantees.
+
+---
+
+### 4. Bounded Retention Pruning for Orphaned Telemetry Tables
+* **Reference**: [OmniRoute PR #14285](https://github.com/diegosouzapw/OmniRoute/pull/14285) fixing [Issue #14268](https://github.com/diegosouzapw/OmniRoute/issues/14268)  
+* **Subsystem**: SQLite Storage Engine & Retention Sweeper  
+* **Impact**: Database Bloat Elimination in Long-Running Gateways  
+
+#### The Problem
+In OmniRoute deployments, the stacked prompt compression engine recorded breakdown logs into `compression_engine_breakdown`. While the parent `compression_analytics` table was regularly trimmed on an operator-configurable retention policy (default 30 days) and purged during usage resets, `compression_engine_breakdown` was omitted from both `cleanup.ts` and `RESET_TARGETS`. In production deployments running 5+ months, this table accumulated 731,000+ unpruned rows, causing database bloat and slow WAL checkpoints.
+
+#### Solution
+1. Implemented `cleanupCompressionEngineBreakdown()` in `src/lib/db/cleanup.ts`, computing `cutoffISO` from `retention.compressionAnalytics` (or 30 days default) and executing an indexed timestamp deletion.
+2. Integrated breakdown cleanup into the nightly `runAutoCleanup()` scheduler alongside parent analytics tables.
+3. Added `compression_engine_breakdown` to `RESET_TARGETS` and `ResetUsageHistoryResult` so manual purge requests sweep telemetry cleanly.
+4. Added rigorous unit tests in `tests/unit/db-cleanup-compression-breakdown-14268.test.ts` verifying TTL-based row expiration, table reset integration, and non-blocking failure isolation.
 
 ---
 
