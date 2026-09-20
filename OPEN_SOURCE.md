@@ -1,134 +1,144 @@
-# Open-Source Contributions & Engineering Deep Dives
+# Upstream Maintenance Log & Engineering Notes
 
-This document indexes selected upstream contributions by **Goni Sulaiman** across production repositories, detailing the technical problem, root cause diagnosis, architectural constraints, and maintainer reviews.
+> My running log of production bug fixes, architectural patches, and deep dives across high-traffic open source systems—chiefly [OmniRoute](https://github.com/diegosouzapw/OmniRoute), [Filecraft](https://github.com/Filecraft/Filecraft), and [CEII Platform](https://github.com/Centre-For-Energy/ceii-platform).
+
+When I contribute to complex production codebases, I focus on the problems that quietly fail under load: authorization edge cases, leaked proxy payload markers, database bloat, and flakey CI test harnesses. 
+
+I don't open drive-by typo PRs. I write reproductions first, find the exact line causing the defect, contain the blast radius so nothing else breaks, and write clean tests that keep maintainers confident.
 
 ---
 
-## Index of Contributions
+## At a Glance
 
-### [OmniRoute](https://github.com/diegosouzapw/OmniRoute)
-*Free MIT AI gateway: single endpoint routing across 350+ LLM providers with streaming protocol translation, quota-aware fallback, and resilience circuit breakers.*
+- **Core Focus**: AI Proxy Runtimes, Reverse Proxy Security, SQLite Storage Engines, macOS Native Tooling.
+- **Primary Upstream**: [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) (68k+ stars, 350+ LLM providers, Next.js 16 / TypeScript / Node SSE engine).
+- **Status**: 15+ upstream contributions (merged and in review), spanning security, executors, live WebSockets, and database maintenance.
 
-| PR | Subsystem | Description & Technical Scope | State |
+```
+Total Tracked Upstream PRs: 18
+├── Merged: 10
+└── Active / In Review: 8
+```
+
+---
+
+## 🛠️ OmniRoute Contributions
+
+[OmniRoute](https://github.com/diegosouzapw/OmniRoute) is a unified AI proxy that routes client traffic across 350+ providers with automatic fallback, streaming protocol translation, and circuit breakers. Here is my breakdown of the problems I've solved in it:
+
+### 1. Storage & Database Maintenance
+
+| PR | Type | What I Found & What I Did | Status |
 | :--- | :--- | :--- | :--- |
-| **[#13741](https://github.com/diegosouzapw/OmniRoute/pull/13741)** | Security & Policy | **Enforce `allowedEndpoints` on URL rewrite aliases ([#13685](https://github.com/diegosouzapw/OmniRoute/issues/13685)).** Normalized client rewrite paths (`/chat/completions`, `/codex/*`, `/v1/v1/*`) to canonical endpoints before authorization category evaluation. | **Merged** |
-| **[#12735](https://github.com/diegosouzapw/OmniRoute/pull/12735)** | Streaming & Egress | **Strip internal proxy markers from request bodies ([#12729](https://github.com/diegosouzapw/OmniRoute/issues/12729)).** Prevented internal `_omniroute*` flags from leaking to strict upstream providers (NVIDIA NIM, Groq 400 Bad Request). Audited class hierarchies to apply targeted stripping to executors bypassing base serialization (`dario`, `9router`). | **Merged** |
-| **[#12736](https://github.com/diegosouzapw/OmniRoute/pull/12736)** | Configuration UI | **Expose Modal Base URL field in connection modals ([#12704](https://github.com/diegosouzapw/OmniRoute/issues/12704)).** Resolved custom provider endpoint configuration in dashboard state management. | **Merged** |
-| **[#12371](https://github.com/diegosouzapw/OmniRoute/pull/12371)** | Model Registry | **Publish effort tiers on Kimi K3 base models only.** Restricted reasoning configuration parameters to supported model architectures. | **Merged** |
-| **[#12369](https://github.com/diegosouzapw/OmniRoute/pull/12369)** | Localization | **Wrap placeholder variables in ICU single quotes across all 43 locales.** Resolved ICU message syntax parsing breaks during onboarding. | **Merged** |
-| **[#12368](https://github.com/diegosouzapw/OmniRoute/pull/12368)** | CLI Runtime | **Remove duplicate positional argument in tunnel create command.** | **Merged** |
-| **[#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)** | Storage & Retention | **Prune `compression_engine_breakdown` on retention schedule and usage resets ([#14268](https://github.com/diegosouzapw/OmniRoute/issues/14268)).** Wired orphaned telemetry table into `cleanupCompressionEngineBreakdown` with 30-day cutoff and included in `RESET_TARGETS`. | **Active** |
-| **[#14281](https://github.com/diegosouzapw/OmniRoute/pull/14281)** | Protocols & Transports | **Wire Codex App-Server WebSocket transport and normalize reasoning model aliases ([#14277](https://github.com/diegosouzapw/OmniRoute/issues/14277)).** Implemented bi-directional WebSocket client dispatch and normalized suffix aliases (`-low`, `-medium`, `-high`) to turn effort parameters. | **Active** |
-| **[#14275](https://github.com/diegosouzapw/OmniRoute/pull/14275)** | LiveWS Real-Time | **Allow anonymous dashboard WebSocket connections when `requireLogin=false` ([#14256](https://github.com/diegosouzapw/OmniRoute/issues/14256)).** Fixed local monitoring disconnections when operator authentication is disabled. | **Active** |
-| **[#14274](https://github.com/diegosouzapw/OmniRoute/pull/14274)** | Storage Engine | **Silence critical boot warnings for legacy Bifrost slot index renumbering ([#14262](https://github.com/diegosouzapw/OmniRoute/issues/14262)).** Traced migration history (slots 100–105) to eliminate false-alarm fatal alerts during boot sequence. | **Active** |
-| **[#14271](https://github.com/diegosouzapw/OmniRoute/pull/14271)** | Composite Routing | **Recursively expand combo-ref targets when computing capabilities ([#14232](https://github.com/diegosouzapw/OmniRoute/issues/14232)).** Resolved capability masking in multi-model composite pipelines. | **Active** |
-| **[#14185](https://github.com/diegosouzapw/OmniRoute/pull/14185)** | Ingress Parsing | **Detect `/v1beta` ingress bodies as OpenAI protocol rather than Claude.** | **Active** |
-| **[#14184](https://github.com/diegosouzapw/OmniRoute/pull/14184)** | Networking | **Probe HTTP proxies on standard port 80 when port is omitted.** | **Active** |
-| **[#14155](https://github.com/diegosouzapw/OmniRoute/pull/14155)** | Build & CI | **Run env/doc synchronization gates on checkouts requiring URL path encoding.** | **Active** |
-| **[#14153](https://github.com/diegosouzapw/OmniRoute/pull/14153)** | Translator Runtime | **Keep post-close trailing text off completed Responses message items.** | **Active** |
+| **[#14285](https://github.com/diegosouzapw/OmniRoute/pull/14285)** | Bug / Storage | **Fixed 731k+ leaked telemetry rows in `compression_engine_breakdown` ([#14268](https://github.com/diegosouzapw/OmniRoute/issues/14268)).** Stacked prompt compression logged per-engine breakdowns, but the table was omitted from both automated retention cleanup and usage resets. In production instances running 5+ months, this accumulated hundreds of thousands of rows. I wrote `cleanupCompressionEngineBreakdown` with a 30-day cutoff, hooked it into nightly auto-cleanup, and added it to `RESET_TARGETS`. | **Active** |
+| **[#14274](https://github.com/diegosouzapw/OmniRoute/pull/14274)** | Fix / Boot | **Silenced false-positive fatal boot alerts during Bifrost slot index renumbering ([#14262](https://github.com/diegosouzapw/OmniRoute/issues/14262)).** Traced migration history for legacy slots 100–105 to prevent the boot sequence from firing critical alarms on expected slot renumbering. | **Active** |
+
+```mermaid
+flowchart LR
+    A["Nightly Auto-Cleanup"] --> B["compression_analytics (30d retention)"]
+    A -.-> C["compression_engine_breakdown (Before: OMITTED — 731k unpruned rows)"]
+    A ==> D["cleanupCompressionEngineBreakdown (My Fix: pruned to 30d & wiped on reset)"]
+```
 
 ---
 
-### [Filecraft](https://github.com/Filecraft/Filecraft)
-*Native macOS document export and processing engine.*
+### 2. Security & Access Control
 
-| PR | Subsystem | Description & Technical Scope | State |
+| PR | Type | What I Found & What I Did | Status |
 | :--- | :--- | :--- | :--- |
-| **[#7](https://github.com/Filecraft/Filecraft/pull/7)** | System Test Harness | **Gate macOS GUI harness on proven synthetic event delivery.** Fixed non-deterministic CI test failures caused by stale Accessibility preflight caches after host restarts. Emits an active virtual F13 probe to verify event dispatch before executing test journeys, with a human-driven fallback mode. | **Merged** |
-| **[#6](https://github.com/Filecraft/Filecraft/pull/6)**, **[#8](https://github.com/Filecraft/Filecraft/pull/8)** | Release Pipeline | Distribution and consumer packaging pipelines. | **Merged** |
+| **[#13741](https://github.com/diegosouzapw/OmniRoute/pull/13741)** | Security | **Fixed an authorization bypass on URL rewrite aliases ([#13685](https://github.com/diegosouzapw/OmniRoute/issues/13685)).** When restricted API keys had `allowedEndpoints: ["search"]`, calling aliases like `/chat/completions` or `/codex/*` bypassed the policy engine because `resolveEndpointCategory()` only recognized canonical `/v1/...` routes and returned `null` (which failed open). I implemented `resolveCanonicalEndpointPath()` to normalize aliases before category checks, plugging the hole without altering error paths. | **Merged** |
+
+```mermaid
+flowchart TD
+    Req["Incoming Client Request: /chat/completions"] --> Auth["validateEndpointAccess(req)"]
+    Auth --> Old{"Before My Fix"}
+    Old -->|Raw URL checked| Bypass["resolveEndpointCategory('/chat/completions') == null<br/>-> Access Allowed (CRITICAL BYPASS!)"]
+    Auth --> New{"After My Fix"}
+    New -->|Canonicalized first| Secure["resolveCanonicalEndpointPath -> '/v1/chat/completions'<br/>-> Evaluates 'chat' category -> 403 Forbidden"]
+```
 
 ---
 
-### [CEII Platform](https://github.com/Centre-For-Energy/ceii-platform)
-*Institutional research and enterprise web platform.*
+### 3. Streaming Egress & Upstream Serialization
 
-| PR | Subsystem | Description & Technical Scope | State |
+| PR | Type | What I Found & What I Did | Status |
 | :--- | :--- | :--- | :--- |
-| **[#1](https://github.com/Centre-For-Energy/ceii-platform/pull/1)**–**[#5](https://github.com/Centre-For-Energy/ceii-platform/pull/5)** | Architecture & Layout | Established application shell, design system primitives, modular routing, and WCAG AA accessibility compliance framework. | **Merged** |
+| **[#12735](https://github.com/diegosouzapw/OmniRoute/pull/12735)** | Bug / Egress | **Stripped internal proxy markers from outgoing request bodies ([#12729](https://github.com/diegosouzapw/OmniRoute/issues/12729)).** Internal routing flags like `_omnirouteSkipContextRelay` were being passed through to upstream APIs. Strict providers (NVIDIA NIM and Groq) rejected these with HTTP 400 `Unsupported parameter(s)`. I audited the executor hierarchy and added targeted stripping to executors that bypassed the shared base dispatch (`dario`, `9router`). | **Merged** |
+| **[#14153](https://github.com/diegosouzapw/OmniRoute/pull/14153)** | Streaming | **Prevented trailing text from being appended to completed Responses message items.** Kept post-close chunks off already-finalized items during SSE stream translation. | **Active** |
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant OmniRoute
+    participant Upstream as Upstream (NVIDIA NIM / Groq)
+    Client->>OmniRoute: POST /v1/chat/completions
+    Note over OmniRoute: Injects internal loop-guard flag:<br/>_omnirouteInternalRequest: true
+    alt Before Fix
+        OmniRoute->>Upstream: Body includes "_omnirouteInternalRequest"
+        Upstream-->>OmniRoute: 400 Bad Request ("unrecognized parameter")
+    else After My Fix
+        OmniRoute->>OmniRoute: stripInternalMarkers() in executor chain
+        OmniRoute->>Upstream: Clean, valid JSON body
+        Upstream-->>OmniRoute: 200 OK (Stream / Completion)
+    end
+```
 
 ---
 
-## Technical Case Studies
+### 4. Transports, Routing & Real-Time Engines
 
-### 1. Authorization Bypass on URL Rewrite Aliases
-* **Reference**: [OmniRoute PR #13741](https://github.com/diegosouzapw/OmniRoute/pull/13741) fixing [Issue #13685](https://github.com/diegosouzapw/OmniRoute/issues/13685)  
-* **Subsystem**: API Policy & Access Control  
-* **Impact**: Critical Security Fix  
-
-#### The Problem
-In OmniRoute, operators configure API keys with scoped endpoint restrictions (e.g. `allowedEndpoints: ["search"]`). A route handler in Next.js receives the client's raw request URL. When a client invoked alternative rewrite aliases defined in `next.config.mjs` (such as `/chat/completions`, `/codex/*`, or `/v1/v1/*`), `validateEndpointAccess` evaluated the un-canonicalized pathname against `resolveEndpointCategory()`. Because `resolveEndpointCategory` only recognized canonical `/v1/...` routes, it returned `null`. The policy check interpreted `null` as "uncategorized route; allow access," effectively permitting restricted keys to invoke any LLM chat or responses endpoint.
-
-#### Root Cause & Architectural Constraints
-Previous patch `#13684` had only stripped leading `/api` prefixes, leaving rewrite aliases open. Proposing to read internal Next.js rewritten paths via `getRequestMeta(req, "rewrittenPathname")` was invalid because Next.js App Router does not populate that metadata or attach a rewritten-path header.
-
-#### Solution
-Implemented `resolveCanonicalEndpointPath()` adjacent to `resolveEndpointCategory()`. The function maps all incoming client-facing aliases to the canonical `/v1/...` format prior to category resolution:
-- Folds `/codex/:path*` subpaths onto `/api/v1/responses`, ensuring they resolve cleanly to the `chat` category without ad-hoc special cases.
-- Deliberately retained fail-open semantics on unreachable URL parse try/catch blocks to avoid modifying baseline error handling behaviors.
-- Verified across 56 dedicated canonicalizer unit tests, 106 dependent test suites, and 17 integration tests.
-
-#### Maintainer Review
-> *"Thanks @gonisulaimann — merging via the release merge-train. Validated in local merge-train on devbox @ train tip 7bb373f, boarded with 55 sibling PRs: typecheck:core, file-size, complexity, cognitive-complexity, changelog-integrity green; 747/747 changed-area node:test cases + 476/476 vitest green."*  
-> — **@diegosouzapw** (Lead Maintainer)
+| PR | Type | What I Found & What I Did | Status |
+| :--- | :--- | :--- | :--- |
+| **[#14281](https://github.com/diegosouzapw/OmniRoute/pull/14281)** | Feature / Transports | **Wired Codex App-Server WebSocket transport & reasoning model alias normalization ([#14277](https://github.com/diegosouzapw/OmniRoute/issues/14277)).** Added bi-directional WebSocket client dispatch and normalized suffix aliases (`-low`, `-medium`, `-high`) into turn effort parameters. | **Active** |
+| **[#14275](https://github.com/diegosouzapw/OmniRoute/pull/14275)** | Real-Time | **Allowed anonymous dashboard LiveWS connections when `requireLogin=false` ([#14256](https://github.com/diegosouzapw/OmniRoute/issues/14256)).** Fixed unexpected WebSocket disconnections on local dev instances when auth is disabled. | **Active** |
+| **[#14271](https://github.com/diegosouzapw/OmniRoute/pull/14271)** | Routing | **Recursively expand combo-ref targets when computing capabilities ([#14232](https://github.com/diegosouzapw/OmniRoute/issues/14232)).** Resolved capability masking where composite fallback targets hid actual downstream model capabilities. | **Active** |
+| **[#14185](https://github.com/diegosouzapw/OmniRoute/pull/14185)** | Protocols | **Detect `/v1beta` ingress bodies as OpenAI protocol rather than Claude.** Corrected ingress classifier for non-standard path prefixes. | **Active** |
+| **[#14184](https://github.com/diegosouzapw/OmniRoute/pull/14184)** | Networking | **Probe HTTP proxies on default port 80 when port is omitted in connection string.** | **Active** |
 
 ---
 
-### 2. Leaked Internal Routing Flags Causing Upstream 400s
-* **Reference**: [OmniRoute PR #12735](https://github.com/diegosouzapw/OmniRoute/pull/12735) fixing [Issue #12729](https://github.com/diegosouzapw/OmniRoute/issues/12729)  
-* **Subsystem**: Egress Serialization & HTTP Streaming  
-* **Impact**: Eliminating Production Request Failures  
+### 5. UI, CLI & Internationalization
 
-#### The Problem
-Universal handoff and context-relay requests attached internal flags (`_omnirouteSkipContextRelay`, `_omnirouteInternalRequest`) to prevent recursive loop cascades. These flags were inspected during routing but never stripped from payloads dispatched upstream. Strict OpenAI-compatible providers (notably NVIDIA NIM and Groq) reject unrecognized JSON keys with HTTP 400 `Unsupported parameter(s)`, wasting upstream calls (504 logged production failures).
-
-#### Investigation & Blast Radius Reduction
-Initial investigation suggested patching four distinct executor classes. Tracing the class hierarchy revealed:
-1. `GlmExecutor.transformRequest()` already invoked `super.transformRequest()`, which housed the shared stripping logic.
-2. `GitLabExecutor.transformRequest()` reconstructed the payload key-by-key, preventing top-level markers from escaping.
-3. `DarioExecutor` and `NineRouterExecutor` bypassed base serialization entirely and never called `super()`.
-
-Rather than injecting redundant, speculative code across all four classes, the unnecessary changes were pruned. The diff was reduced to the two executors genuinely leaking data, verified with negative test stubs asserting marker elimination.
-
-#### Maintainer Review
-> *"Confirmed the leak is real on current tip... Your fix at the shared chokepoint and, importantly, the defense-in-depth calls you added inside dario/gitlab/glm/ninerouter (which bypass the base dispatch entirely) are both correct... Happy to coordinate the rebase so you keep credit."*  
-> — **@diegosouzapw** (Lead Maintainer)
+| PR | Type | What I Found & What I Did | Status |
+| :--- | :--- | :--- | :--- |
+| **[#12736](https://github.com/diegosouzapw/OmniRoute/pull/12736)** | Frontend | **Exposed Modal Base URL field in connection settings modal ([#12704](https://github.com/diegosouzapw/OmniRoute/issues/12704)).** Allowed operators to configure custom upstream base URLs directly from the UI. | **Merged** |
+| **[#12371](https://github.com/diegosouzapw/OmniRoute/pull/12371)** | Registry | **Restricted reasoning effort tiers to Kimi K3 base models only.** Prevented incompatible reasoning parameters from being sent to unsupported model variants. | **Merged** |
+| **[#12369](https://github.com/diegosouzapw/OmniRoute/pull/12369)** | i18n | **Escaped placeholder variables in ICU single quotes across all 43 locales.** Fixed frontend crashes during user onboarding caused by broken ICU message syntax. | **Merged** |
+| **[#12368](https://github.com/diegosouzapw/OmniRoute/pull/12368)** | CLI | **Removed duplicate positional argument in `tunnel create` CLI command.** | **Merged** |
+| **[#14155](https://github.com/diegosouzapw/OmniRoute/pull/14155)** | CI / Tooling | **Fixed env/doc synchronization gates on checkouts requiring URL path encoding.** | **Active** |
 
 ---
 
-### 3. Gating Native macOS GUI Harnesses on Proven Event Delivery
-* **Reference**: [Filecraft PR #7](https://github.com/Filecraft/Filecraft/pull/7)  
-* **Subsystem**: Native System Test Harness (Swift / macOS)  
-* **Impact**: Deterministic Automated CI  
+## 🍏 Native macOS & Test Harnesses (Filecraft)
 
-#### The Problem
-The automated macOS GUI test harness exhibited non-deterministic test failures following host reboots. Operating system Accessibility preflight APIs frequently reported cached success states even when the window server dropped synthetic keyboard and mouse events.
+[Filecraft](https://github.com/Filecraft/Filecraft) is a native macOS document export and processing engine written in Swift and AppKit.
 
-#### Solution
-Engineered an active synthetic delivery probe: before trusting synthetic input capability, the test harness emits an innocuous virtual `F13` keypress and verifies delivery acknowledgment within the event loop. If event injection is unsupported by the host environment, the harness smoothly switches to `--human-driven` mode, allowing operators to drive inputs while the harness independently asserts pixel output, byte integrity, and application relaunch guarantees.
+| PR | Type | What I Found & What I Did | Status |
+| :--- | :--- | :--- | :--- |
+| **[#7](https://github.com/Filecraft/Filecraft/pull/7)** | System Test | **Gated macOS GUI test harness on proven synthetic event delivery.** Fixed a painful non-deterministic bug where CI test suites failed after host restarts. macOS Accessibility preflight APIs frequently report cached success even when the window server is dropping synthetic keyboard/mouse events. I built an active virtual `F13` probe to verify actual event delivery before running journeys, with a clean `--human-driven` fallback mode. | **Merged** |
+| **[#6](https://github.com/Filecraft/Filecraft/pull/6)**, **[#8](https://github.com/Filecraft/Filecraft/pull/8)** | Packaging | Release packaging and distribution pipeline hardening. | **Merged** |
 
 ---
 
-### 4. Bounded Retention Pruning for Orphaned Telemetry Tables
-* **Reference**: [OmniRoute PR #14285](https://github.com/diegosouzapw/OmniRoute/pull/14285) fixing [Issue #14268](https://github.com/diegosouzapw/OmniRoute/issues/14268)  
-* **Subsystem**: SQLite Storage Engine & Retention Sweeper  
-* **Impact**: Database Bloat Elimination in Long-Running Gateways  
+## ⚡ Institutional Systems (CEII Platform)
 
-#### The Problem
-In OmniRoute deployments, the stacked prompt compression engine recorded breakdown logs into `compression_engine_breakdown`. While the parent `compression_analytics` table was regularly trimmed on an operator-configurable retention policy (default 30 days) and purged during usage resets, `compression_engine_breakdown` was omitted from both `cleanup.ts` and `RESET_TARGETS`. In production deployments running 5+ months, this table accumulated 731,000+ unpruned rows, causing database bloat and slow WAL checkpoints.
+[CEII Platform](https://github.com/Centre-For-Energy/ceii-platform) is an institutional energy research and web platform.
 
-#### Solution
-1. Implemented `cleanupCompressionEngineBreakdown()` in `src/lib/db/cleanup.ts`, computing `cutoffISO` from `retention.compressionAnalytics` (or 30 days default) and executing an indexed timestamp deletion.
-2. Integrated breakdown cleanup into the nightly `runAutoCleanup()` scheduler alongside parent analytics tables.
-3. Added `compression_engine_breakdown` to `RESET_TARGETS` and `ResetUsageHistoryResult` so manual purge requests sweep telemetry cleanly.
-4. Added rigorous unit tests in `tests/unit/db-cleanup-compression-breakdown-14268.test.ts` verifying TTL-based row expiration, table reset integration, and non-blocking failure isolation.
+| PR | Type | What I Found & What I Did | Status |
+| :--- | :--- | :--- | :--- |
+| **[#1](https://github.com/Centre-For-Energy/ceii-platform/pull/1)**–**[#5](https://github.com/Centre-For-Energy/ceii-platform/pull/5)** | Architecture | Engineered foundational application shell, design system component primitives, modular routing layout, and WCAG AA accessibility compliance framework. | **Merged** |
 
 ---
 
-## Engineering Standards & Etiquette
+## How I Approach Codebases
 
-When contributing to complex multi-thousand-line open-source codebases:
+When working in someone else's codebase:
 
-1. **Reproduction Before Modification**: Confirm failures with isolated, negative test cases that reproduce the defect before modifying production code.
-2. **Blast-Radius Containment**: Resist opportunistic refactoring during bug fixes. Keep diffs focused, auditable, and minimal.
-3. **Merge-Train Respect**: In [#14152](https://github.com/diegosouzapw/OmniRoute/pull/14152), upon noticing that the maintainer's PR `#14164` already drained blocking `no-unused-vars` errors, voluntarily closed the PR to reduce maintainer review overhead and prevent merge conflicts.
-4. **Transparent Communication**: Accompany every PR with exact reproduction commands, impact logs, and test verification matrices.
+1. **Reproduction first**: Never propose a fix until I have an isolated test case failing for the exact reason described in the issue.
+2. **Minimal blast radius**: Resist the temptation to refactor unrelated code. If a bug is caused by two leaky classes, patch those two classes; don't rewrite the entire subsystem.
+3. **Respect maintainer time**: In [#14152](https://github.com/diegosouzapw/OmniRoute/pull/14152), when I noticed that maintainer PR `#14164` had already cleaned up the same linter issue during a release train, I immediately closed my PR to prevent merge conflicts and save review cycles.
+4. **Transparent verification**: Every PR includes exact reproduction commands, terminal traces, and unit test assertions.
+
+---
+
+*Maintained by [@gonisulaimann](https://github.com/gonisulaimann) • [LinkedIn](https://linkedin.com/in/gonisulaimann)*
