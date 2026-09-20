@@ -47,6 +47,7 @@ Systems and developer tooling engineer building native macOS software, static an
 ## Community
 
 I maintain in public, publish the reasoning behind technical decisions, answer questions, and work with contributors to turn real-world feedback into documented, tested improvements
+
 👉 **See the complete [Open Source Contribution Index & Technical Deep Dives](./OPEN_SOURCE.md)** for detailed maintainance log.
 
 ## Connect
