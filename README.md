@@ -4,7 +4,7 @@ Open-source Contributor and Machine Learning Engineer
 
 <a href="https://www.ko-fi.com/gonisulaiman"><img height="20" src="https://srv-cdn.himpfen.io/badges/kofi/kofi-flat.svg" alt="Ko-Fi" /></a>
 <a href="https://discord.com/users/gonisulaiman"><img height="20" src="https://img.shields.io/badge/Discord-gonisulaiman-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
-<a href="https://mvp.microsoft.com/en-US/studentambassadors/profile/326762de-6f72-441f-baa8-ef5a9efc5d1c"><img height="20" src="https://img.shields.io/badge/Microsoft-Student%20Ambassador-00A4EF?style=flat-square&logo=microsoft&logoColor=white" alt="Microsoft Student Ambassador"/></a>
+<a href="https://mvp.microsoft.com/en-US/studentambassadors/profile/326762de-6f72-441f-baa8-ef5a9efc5d1c"><img height="20" src="https://img.shields.io/badge/Microsoft-Student%20Ambassador-00A4EF?style=flat-square&logo=microsoft&logoColor=white" alt="Community Copilot"/></a>
 <a href="https://github.com/gonisulaimann/Grounded"><img height="20" src="https://img.shields.io/badge/Grounded-v0.5.0-blue?style=flat-square&logo=python" alt="Grounded"/></a>
 <a href="https://github.com/diegosouzapw/OmniRoute"><img height="20" src="https://img.shields.io/badge/OmniRoute-Core%20Contributor-2ea44f?style=flat-square&logo=github" alt="OmniRoute"/></a>
 <a href="https://linkedin.com/in/gonisulaimann"><img height="20" src="https://img.shields.io/badge/LinkedIn-gonisulaimann-0077B5?style=flat-square&logo=linkedin" alt="LinkedIn"/></a>
