@@ -28,13 +28,6 @@ Open-source Contributor and Machine Learning Engineer
       <img height="18" src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square" alt="TypeScript"/>
       <a href="./MAINTENANCE_LOG.md"><img height="18" src="https://img.shields.io/badge/Maintenance%20Log-Live-blue?style=flat-square" alt="Log"/></a>
     </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/Centre-For-Energy/ceii-platform">CEII Platform</a></b>
-      <a href="https://github.com/Centre-For-Energy/ceii-platform"><img height="18" src="https://img.shields.io/badge/-Public-lightgrey?style=flat-square" alt="Public"/></a><br/>
-      <sub>Modular enterprise energy research web platform. Engineered the foundational application shell, component primitives, WCAG AA accessibility architecture, and modular routing infrastructure.</sub><br/>
-      <img height="18" src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square" alt="TypeScript"/>
-      <a href="https://github.com/Centre-For-Energy/ceii-platform/pulls?q=is%3Apr+author%3Agonisulaimann"><img height="18" src="https://img.shields.io/badge/PRs-Merged-green?style=flat-square" alt="PRs"/></a>
-    </td>
   </tr>
 </table>
 
