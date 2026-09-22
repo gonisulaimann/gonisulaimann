@@ -1,7 +1,5 @@
 # Upstream Maintenance Log & Changelog
 
-> Running log of production pull requests, commits, and releases authored by [@gonisulaimann](https://github.com/gonisulaimann) across public repositories.
-
 [![Merged PRs](https://img.shields.io/badge/Merged%20PRs-16-2ea44f?style=flat-square)](https://github.com/pulls?q=is%3Apr+author%3Agonisulaimann+is%3Amerged) 
 [![In-Flight PRs](https://img.shields.io/badge/In--Flight%20PRs-10-d29922?style=flat-square)](https://github.com/pulls?q=is%3Apr+author%3Agonisulaimann+is%3Aopen) 
 [![Active Repos](https://img.shields.io/badge/Repositories%20Maintained-9-0969da?style=flat-square)](https://github.com/gonisulaimann)
