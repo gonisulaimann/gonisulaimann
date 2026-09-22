@@ -20,7 +20,6 @@ Open-source Contributor and Machine Learning Engineer
       <img height="18" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square" alt="Python"/>
       <a href="https://github.com/gonisulaimann/Grounded/stargazers"><img height="18" src="https://img.shields.io/github/stars/gonisulaimann/Grounded?style=social" alt="stars"/></a>
     </td>
-  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/gonisulaimann/OmniRoute">OmniRoute (Upstream Work)</a></b>
       <a href="https://github.com/diegosouzapw/OmniRoute"><img height="18" src="https://img.shields.io/badge/-Contributor-2ea44f?style=flat-square" alt="Contributor"/></a><br/>
