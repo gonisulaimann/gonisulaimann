@@ -1,6 +1,6 @@
 # Goni Sulaiman
 
-Systems and developer tooling engineer building native macOS software, static analysis engines, and high-throughput AI infrastructure. Core contributor to production routing and streaming runtimes.
+Open-source Contributor and Machine Learning Engineer 
 
 <a href="https://www.ko-fi.com/gonisulaiman"><img height="20" src="https://srv-cdn.himpfen.io/badges/kofi/kofi-flat.svg" alt="Ko-Fi" /></a>
 <a href="https://discord.com/users/gonisulaiman"><img height="20" src="https://img.shields.io/badge/Discord-gonisulaiman-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
@@ -20,14 +20,6 @@ Systems and developer tooling engineer building native macOS software, static an
       <img height="18" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square" alt="Python"/>
       <a href="https://github.com/gonisulaimann/Grounded/stargazers"><img height="18" src="https://img.shields.io/github/stars/gonisulaimann/Grounded?style=social" alt="stars"/></a>
     </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/gonisulaimann/Notcher">Notcher</a></b>
-      <a href="https://github.com/gonisulaimann/Notcher"><img height="18" src="https://img.shields.io/badge/-Public-lightgrey?style=flat-square" alt="Public"/></a><br/>
-      <sub>Native macOS menu bar and Dynamic Island system utility built with Swift & SwiftUI. Features spring-physics HUD morphing around hardware notch geometry and local peer-to-peer iOS synchronization.</sub><br/>
-      <img height="18" src="https://img.shields.io/badge/-Swift-F05138?style=flat-square" alt="Swift"/>
-      <a href="https://github.com/gonisulaimann/Notcher/releases"><img height="18" src="https://img.shields.io/github/v/release/gonisulaimann/Notcher?style=flat-square" alt="release"/></a>
-    </td>
-  </tr>
   <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/gonisulaimann/OmniRoute">OmniRoute (Upstream Work)</a></b>
